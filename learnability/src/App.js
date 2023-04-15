@@ -1,16 +1,22 @@
 import React from "react";
 import Sidebar from "./component/Sidebar";
 import CoinsDisplay from "./component/CoinsDisplay";
+import SwipeSight from "./component/SwipeSight";
 
 export default function App() {
 
   const [coins, setCoins] = React.useState(0);
 
+  const [currentPage, setCurrentPage] = React.useState("SwipeSight");
+
   return (
   <div className="flex">
     <Sidebar />
-    <CoinsDisplay coins={coins} />
+    <SwipeSight /> 
+    {/* Swap out for testing different game modes */}
+     <CoinsDisplay coins={coins} />
   </div>
+  
   );
 }
 
