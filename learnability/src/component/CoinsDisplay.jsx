@@ -22,5 +22,6 @@ const Counter = ({count}) => (
         
     </div>
 )
+
  
 export default CoinsDisplay;

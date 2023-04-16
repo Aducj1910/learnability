@@ -3,6 +3,7 @@ import Sidebar from "./component/Sidebar";
 import CoinsDisplay from "./component/CoinsDisplay";
 import SwipeSight from "./component/SwipeSight";
 import Collectibles from "./component/Collectibles";
+import Shop from "./component/Shop";
 
 export default function App() {
 
@@ -20,10 +21,15 @@ export default function App() {
       <Sidebar setCurrentPage={setCurrentPage} />
 
     {
+
+
   currentPage === "Collectibles" ? (
-    <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
+    // <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
+    <Shop />
   ) : currentPage === "SwipeSight" ? (
     <SwipeSight />
+  ) : currentPage == "Shop" ? (
+    <Shop />
   ) : null
 }
 
