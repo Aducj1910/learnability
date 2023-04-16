@@ -13,6 +13,7 @@ const SwipeSight = (props) => {
   const [randomNums, setRandomNums] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [numRight, setNumRight] = useState(0);
+  const [start, setStart] = useState(false);
 
 
   const generateRandomNumbers = () => {
@@ -26,7 +27,6 @@ const SwipeSight = (props) => {
     setRandomNums(nums);
   };
 
-
   useEffect(() => {
    
     generateRandomNumbers();
@@ -35,14 +35,14 @@ const SwipeSight = (props) => {
   useEffect(() => {
     // Use setTimeout to decrement count every second
     const timer = setTimeout(() => {
-      if (count > 0) {
+      if (count > 0 && start) {
         setCount(count - 1);
       }
     }, 1000);
 
     // Clean up the timer when the component unmounts or count reaches 0
     return () => clearTimeout(timer);
-  }, [count]);
+  }, [count, start]);
 
   const getIcon = () => {
     // Return the IconCard component
@@ -81,7 +81,7 @@ const SwipeSight = (props) => {
    }
    else {
     // Render the end screen with number of coins won or lost
-    let coinsWon = numRight * 30; // Assuming each correct guess wins 5 coins
+    let coinsWon = numRight * 10; // Assuming each correct guess wins 5 coins
     if(coinsWon < 0){
       coinsWon = 0
     }
@@ -91,7 +91,9 @@ const SwipeSight = (props) => {
 
     return (
       <div className="flex justify-center items-center h-full">
-      <div className="bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900 rounded-lg shadow-2xl p-8">
+    
+
+            <div className="bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900 rounded-lg shadow-2xl p-8">
         <div className="flex flex-col items-center">
           <div className="text-4xl text-white mb-4">
             {coinsWon > 0 ? 'Congratulations!' : 'Better Luck Next Time!'}
@@ -140,6 +142,7 @@ const SwipeSight = (props) => {
           </div>
         </div>
       </div>
+         
     </div>
     
     );
@@ -184,23 +187,43 @@ const SwipeSight = (props) => {
 
   return (
     <div className="flex-grow h-screen flex flex-col items-center justify-center mt-7">
-      <div className="text-3xl font-bold">{!done ? 'Memorize!' : `⬅ Seen New ➡`}
-  </div>
+      {
+        start ?
+        (
+          <div className="text-3xl font-bold">{!done ? 'Memorize!' : `⬅ Seen New ➡`}
+      </div>
+        )
+        :
+        (
+          <div className="text-3xl font-bold">
+            Play SwipeSight!
+          </div>
+        )
+      }
   {!done ? (
     <div className="text-5xl font-bold mt-5">
-      {count === 0 ? (
-        <div>
-          {getIcon()}
-        </div>
-      ) : (
-        <div>
-          {count}
-        </div>
-      )}
+      {
+        start ?
+        (
+          <div>
+          {count === 0 ? (
+            <div>
+              {getIcon()}
+            </div>
+          ) : (
+            <div>
+              {count}
+            </div>
+          )}
+          </div>
+        ) : <button onClick={() => setStart(true)} className="bg-primary text-white font-medium px-3 py-2 rounded hover:bg-gray-500 transition text-3xl">
+          Start
+      </button>
+      }
     </div>
   ) : (
     <div>
-          <div className="text-5xl font-bold mt-5">
+    <div className="text-2xl font-bold mt-5">
 
       {getDoneIcon(randomNums[currentIndex])}
       </div>

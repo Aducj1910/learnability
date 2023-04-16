@@ -11,10 +11,9 @@ import img7 from "../imgs/7.png";
 import img8 from "../imgs/8.png";
 import img9 from "../imgs/9.png";
 import img10 from "../imgs/10.png";
-import { FaCoins } from 'react-icons/fa';
 
 const Shop = (props) => {
-    const {coins, setCoins} = props;
+    const {coins, setCoins, collectibles, setCollectibles} = props;
 
     const [selectedPack, setSelectedPack] = useState(1); // State to keep track of the selected pack
     const [showPopover, setShowPopover] = useState(false); // State to keep track of the popover visibility
@@ -53,6 +52,13 @@ const Shop = (props) => {
     const nextClick = () => {
         setOnNumber(onNumber + 1);
         var randomNumber = Math.floor(Math.random() * 11);
+
+        if(!collectibles.includes(randomNumber)){
+            let collectiblesTemp = collectibles;
+            collectiblesTemp.push(randomNumber);
+            setCollectibles(collectiblesTemp);
+        }
+
         setSeed(randomNumber);
 
     }

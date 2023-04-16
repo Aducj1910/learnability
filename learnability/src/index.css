@@ -15,3 +15,9 @@
          bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left z-10;
     }
 }
+
+.bg-wood {
+    background-image: url('./imgs/wood.png');
+  }
+  
+  
