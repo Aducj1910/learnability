@@ -5,35 +5,9 @@ import { FaRegSmile, FaRegFrown, FaRegGrinAlt, FaRegMeh, FaRegLaughSquint } from
 
 const IconCard = (props) => {
 
-  const {seen, setSeen, setDone} = props;
+  const {seen, setSeen, setDone, randomNumber, numRight} = props;
 
-  const [randomNumber, setRandomNumber] = useState(1); // Initial random number
   const [count, setCount] = useState(3); // Initialize count to 3
-
-  // Update random number every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (count > 0) {
-        let randomNumber = Math.floor(Math.random() * 10) + 1;
-        let tempSeen = seen;
-        tempSeen.push(randomNumber);
-        setSeen(tempSeen);
-        setRandomNumber(randomNumber);
-        setCount(count - 1);
-
-        
-      }
-      else{
-        setDone(true);
-        console.log("Reached")
-      }
-    
-    }, 500);
-
-    return () => {
-      clearInterval(interval);
-    }
-  }, [count]);
 
   // Render icon or error message based on the random number
   if (randomNumber === 1) {
