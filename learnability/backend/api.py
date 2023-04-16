@@ -1,9 +1,14 @@
 import json
 from flask import Flask, request, jsonify
 from recommendation_model import RecommendationModel
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 model = RecommendationModel(wordwhiz_file='wordwhiz.json', game_file='wildHacks.csv',)
+
+CORS(app)
+
+
 
 @app.route('/', methods=['POST'])
 def recommend_similar_words():

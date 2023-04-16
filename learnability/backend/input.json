@@ -1,1 +1,1 @@
-{"words": ["accomodation", "entrepeneur", "exacerbate", "synchornize", "pterodactyl", "flour", "phlegm", "knight", "gnome"], "user_answers": ["acomodation", "entrepeneur", "exacerbate", "syncronize", "pterodactyl", "flor", "phlegm", "knight", "gnoma"], "correct": [0, 1, 1, 0, 1, 0, 1, 1, 0]}
+{"words": ["house", "push", "pull", "full", "grass", "hour", "sugar", "beautiful", "clothes", "find"], "user_answers": ["house", "house", "house", "house", "house", "house", "house", "house", "house"], "correct": [1, 1, 1, 1, 1, 0, 1, 1, 1]}
