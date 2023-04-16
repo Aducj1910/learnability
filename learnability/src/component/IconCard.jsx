@@ -1,16 +1,53 @@
-import React from 'react';
-import { GiSpikedDragonHead, GiCrystalBall } from 'react-icons/gi';
+import React, { useState, useEffect } from 'react';
+import { GiSpikedDragonHead, GiCrystalBall, GiSpiralBottle, GiMagicPalm } from 'react-icons/gi';
+import { AiOutlineHeart, AiOutlineStar, AiOutlineCloud, AiOutlineCloudUpload, AiOutlineCloudDownload } from 'react-icons/ai';
+import { FaRegSmile, FaRegFrown, FaRegGrinAlt, FaRegMeh, FaRegLaughSquint } from 'react-icons/fa';
 
-const IconCard = () => {
-  // Generate a random number from 1 to 10
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
+const IconCard = (props) => {
+
+  const [randomNumber, setRandomNumber] = useState(1); // Initial random number
+
+  // Update random number every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRandomNumber(Math.floor(Math.random() * 10) + 1);
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
 
   // Render icon or error message based on the random number
   if (randomNumber === 1) {
-    return <GiSpikedDragonHead size="28" />;
+    return <GiSpikedDragonHead size="180" />;
   }
   if (randomNumber === 2){
-    return <GiCrystalBall size="28" />
+    return <GiCrystalBall size="180" />;
+  }
+  if (randomNumber === 3){
+    return <GiSpiralBottle size="180" />;
+  }
+  if (randomNumber === 4){
+    return <GiMagicPalm size="180" />;
+  }
+  if (randomNumber === 5){
+    return <AiOutlineHeart size="180" />;
+  }
+  if (randomNumber === 6){
+    return <AiOutlineStar size="180" />;
+  }
+  if (randomNumber === 7){
+    return <AiOutlineCloud size="180" />;
+  }
+  if (randomNumber === 8){
+    return <AiOutlineCloudUpload size="180" />;
+  }
+  if (randomNumber === 9){
+    return <AiOutlineCloudDownload size="180" />;
+  }
+  if (randomNumber === 10){
+    return <FaRegSmile size="180" />;
   }
   else {
     return <p>error</p>;
@@ -18,4 +55,3 @@ const IconCard = () => {
 }
 
 export default IconCard;
-

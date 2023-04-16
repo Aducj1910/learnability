@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./component/Sidebar";
 import CoinsDisplay from "./component/CoinsDisplay";
 import SwipeSight from "./component/SwipeSight";
+import Collectibles from "./component/Collectibles";
 
 export default function App() {
 
   const [coins, setCoins] = React.useState(0);
 
-  const [currentPage, setCurrentPage] = React.useState("SwipeSight");
+  const [currentPage, setCurrentPage] = React.useState("Collectibles");
+
+  const numCollectibles = 7;
+  const [collectibles, setCollectibles] = React.useState([0, 3, 5]);
+
+  // console.log(currentPage);
 
   return (
   <div className="flex">
-    <Sidebar />
-    <SwipeSight /> 
-    {/* Swap out for testing different game modes */}
+      <Sidebar setCurrentPage={setCurrentPage} />
+
+    {
+  currentPage === "Collectibles" ? (
+    <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
+  ) : currentPage === "SwipeSight" ? (
+    <SwipeSight />
+  ) : null
+}
+
+   
      <CoinsDisplay coins={coins} />
   </div>
   
