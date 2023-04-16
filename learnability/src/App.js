@@ -3,6 +3,8 @@ import Sidebar from "./component/Sidebar";
 import CoinsDisplay from "./component/CoinsDisplay";
 import SwipeSight from "./component/SwipeSight";
 import Collectibles from "./component/Collectibles";
+import WordWhiz from "./component/WordWhiz";
+import Shop from "./component/Shop";
 
 export default function App() {
 
@@ -10,8 +12,8 @@ export default function App() {
 
   const [currentPage, setCurrentPage] = React.useState("Collectibles");
 
-  const numCollectibles = 7;
-  const [collectibles, setCollectibles] = React.useState([0, 3, 5]);
+  const numCollectibles = 11;
+  const [collectibles, setCollectibles] = React.useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
   // console.log(currentPage);
 
@@ -23,8 +25,16 @@ export default function App() {
   currentPage === "Collectibles" ? (
     <Collectibles collectibles={collectibles} numCollectibles={numCollectibles} />
   ) : currentPage === "SwipeSight" ? (
-    <SwipeSight />
-  ) : null
+    <SwipeSight setCoins={setCoins} coins={coins} />
+  ) : (
+    currentPage === "WordWhiz" ? (
+      <WordWhiz />
+    ) : (
+      currentPage === "Shop" ? (
+        <Shop coins={coins} setCoins={setCoins} />
+      ) : null
+    )
+  )
 }
 
    

@@ -7,13 +7,17 @@ import img3 from '../imgs/3.png';
 import img4 from '../imgs/4.png';
 import img5 from '../imgs/5.png';
 import img6 from "../imgs/6.png";
+import img7 from "../imgs/7.png";
+import img8 from "../imgs/8.png";
+import img9 from "../imgs/9.png";
+import img10 from "../imgs/10.png";
 
 const Collectibles = (props) => {
   const { collectibles, numCollectibles } = props;
 
   // Array of image sources
-  const imageSources = [img0, img1, img2, img3, img4, img5, img6];
-  const names = ["Moss", "Blaze", "Bluey", "Sparky", "Rose", "Chroma", "Pearlwing"]
+  const imageSources = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+  const names = ["Moss", "Blaze", "Bluey", "Sparky", "Rose", "Chroma", "Pearlwing", "Lavendula", "Sizzlepaw", "Snowy", "Evermore"]
 
   return (
     <div className="flex-grow flex flex-col ml-10 items-start justify-start mt-7">
