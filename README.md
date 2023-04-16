@@ -1,7 +1,13 @@
 # DragonLearn
 A Web App to make learning fun for those with Dyslexia.
 
-# Tools and Languages:
+# Languages and Frameworks:
+- ReactJS
+- TailwindCSS
+- Python
+- Flask
+- Cosine Similarity
+- Naive Bayes Classifier
 
 ## Gamemodes:
 Currently, our site contains of 3 targeted mini-games: WordWhiz, SwipeSight, SpellSafari. 
