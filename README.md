@@ -1,9 +1,9 @@
-# DragonLearn (Winner 2023 WildHacks Best Accessibility)
-A Web App to make learning fun for those with Dyslexia.
-Project - https://dashboard.wildhacks.net/project/#OUBC
+# DragonLearn (2023 Northwestern Wildhacks)
 
-https://youtu.be/d4f05AS1Cig
-Demo
+A Web App to make learning fun for those with Dyslexia.
+WildHacks Project Link - https://dashboard.wildhacks.net/projects/
+
+<img src="https://github.com/Aducj1910/learnability/assets/62986699/8e83e249-1816-45a0-b047-576aa9f06f7c" width="500" alt="348300968_1408209569976819_7256586170634223898_n">
 
 
 # Languages and Frameworks:
