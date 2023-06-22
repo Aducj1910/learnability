@@ -1,7 +1,8 @@
 # DragonLearn (2023 Northwestern Wildhacks)
 
 A Web App to make learning fun for those with Dyslexia.
-WildHacks Project Link - https://dashboard.wildhacks.net/projects/
+
+WildHacks Project Link - https://dashboard.wildhacks.net/project/#OUBC
 
 <img src="https://github.com/Aducj1910/learnability/assets/62986699/8e83e249-1816-45a0-b047-576aa9f06f7c" width="500" alt="348300968_1408209569976819_7256586170634223898_n">
 
