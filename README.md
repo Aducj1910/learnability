@@ -42,7 +42,7 @@ All 3 of our mini games are created in React.JS and designed by Tailwind CSS. Ad
 ## Contact
 Email us at:
 
-* amitav554@gmail.com
+* rawat7@wisc.edu
 
 * ysguta@wisc.edu
 
